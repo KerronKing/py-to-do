@@ -14,3 +14,14 @@ table, th, td {
   margin: 0 auto;
   padding: 0.5rem;
 }
+form {
+  border: 1px solid;
+  margin: 0 auto;
+  margin-top: 2rem;
+  padding: 1rem;
+  /* text-align: center; */
+  width: 25%;
+}
+input {
+  margin-right: 1rem;
+}

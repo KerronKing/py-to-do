@@ -19,15 +19,15 @@
         <td>{{ todo.content }}</td>
         <td>{{ todo.date_created.date() }}</td>
         <td>
-          <a href="">Update</a><br />
-          <a href="">Delete</a>
+          <a href="">Update</a>
+          <a href="/delete/{{todo.id}}">Delete</a>
         </td>
       </tr>
     {% endfor %}
     
   </table>
   <form action="/" method="POST">
-    <input type="text" name="content" id="content" placeholder="Enter content here"><br>
+    <input type="text" name="content" id="content" placeholder="Enter content here">
     <input type="submit" id="submit" value="Add item">
   </form>
 </div>
