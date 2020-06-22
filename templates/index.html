@@ -6,8 +6,31 @@
 
 {% block body %}
 
-<h1>Py-To-Do (updated)</h1>
+<div id="main">
+  <h1>Py-To-Do (updated)</h1>
+  <table>
+    <tr>
+      <th>Item</th>
+      <th>Date Added</th>
+      <th>Actions</th>
+    </tr>
+    {% for todo in todos %}
+      <tr>
+        <td>{{ todo.content }}</td>
+        <td>{{ todo.date_created.date() }}</td>
+        <td>
+          <a href="">Update</a><br />
+          <a href="">Delete</a>
+        </td>
+      </tr>
+    {% endfor %}
+    
+  </table>
+  <form action="/" method="POST">
+    <input type="text" name="content" id="content" placeholder="Enter content here"><br>
+    <input type="submit" id="submit" value="Add item">
+  </form>
+</div>
 
-<p>The blocks are working.</p>
 
 {% endblock %}
