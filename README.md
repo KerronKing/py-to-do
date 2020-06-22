@@ -11,6 +11,7 @@ Click [here](https://king-py-todo.herokuapp.com/) for a live demo.
 ## Technologies Used
 
 - Python 3.8
+- SQLite 3
 - Flask
 - Heroku
 
