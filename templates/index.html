@@ -10,24 +10,29 @@
 
 <div id="main">
   <h1>Py-To-Do (updated)</h1>
-  <table>
-    <tr>
-      <th>Item</th>
-      <th>Date Added</th>
-      <th>Actions</th>
-    </tr>
-    {% for todo in todos %}
+
+  {% if todos|length < 1 %}
+    <h4>No todos yet created. Add one below</h4>
+  {% else %}
+    <table>
       <tr>
-        <td>{{ todo.content }}</td>
-        <td>{{ todo.date_created.date() }}</td>
-        <td>
-          <a href="/update/{{todo.id}}">Update</a>
-          <a href="/delete/{{todo.id}}">Delete</a>
-        </td>
+        <th>Item</th>
+        <th>Date Added</th>
+        <th>Actions</th>
       </tr>
-    {% endfor %}
-    
-  </table>
+      {% for todo in todos %}
+        <tr>
+          <td>{{ todo.content }}</td>
+          <td>{{ todo.date_created.date() }}</td>
+          <td>
+            <a href="/update/{{todo.id}}">Update</a>
+            <a href="/delete/{{todo.id}}">Delete</a>
+          </td>
+        </tr>
+      {% endfor %}
+    </table>
+  {% endif %}
+
   <form action="/" method="POST">
     <input type="text" name="content" id="content" placeholder="Enter content here">
     <input type="submit" id="submit" value="Add item">
