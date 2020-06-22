@@ -2,6 +2,8 @@
 
 {% block head %}
 
+<title>Py-To-Do Home</title>
+
 {% endblock %}
 
 {% block body %}
@@ -19,7 +21,7 @@
         <td>{{ todo.content }}</td>
         <td>{{ todo.date_created.date() }}</td>
         <td>
-          <a href="">Update</a>
+          <a href="/update/{{todo.id}}">Update</a>
           <a href="/delete/{{todo.id}}">Delete</a>
         </td>
       </tr>
